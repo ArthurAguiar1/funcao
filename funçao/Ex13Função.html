@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset='UTF-8'>
+        <title>ex13 Função</title>
+        <script lang="JavaScript">
+            function triangulo()
+            {
+                var n1,n2,n3,resul;
+                n1 = parseFloat(document.frm.txtn1.value);
+                n2 = parseFloat(document.frm.txtn2.value);
+                n3 = parseFloat(document.frm.txtn3.value);          
+                if(n1 + n2 > n3 && n2 + n3 > n1 && n3 + n1 > n2)
+                {
+                    document.getElementById("resultado1").innerHTML = 
+                    "<b> Os valores formam um triangulo </b>";
+                    if (n1 === n2 && n2 === n3)
+                    {
+                        document.getElementById("resultado1").innerHTML = "<img src='equilatero.png'" +
+                        "<b> Equilatero </b>";
+                    }
+                   else 
+                   if (n1 == n2  ||  n1 == n3 || n2 == n3)
+                    {
+                        document.getElementById("resultado1").innerHTML = "<img src='isoseles.png'" +
+                        "<b> Isoceles </b>";
+                    }
+                    else 
+                    {
+                        document.getElementById("resultado1").innerHTML = "<img src='escaleno.jfif'" +
+                        "<b> Escaleno </b>";
+                    }
+
+                }
+                else 
+                {
+                    document.getElementById("resultado1").innerHTML = 
+                    "<b> Não é um triângulo </b>";
+                }
+                
+            }
+        </script>
+    </head>
+    <body>
+        <form name="frm">
+            1° valor : <input type = "text" name="txtn1" size = "5" ><br>
+            2° valor : <input type = "text" name="txtn2" size = "5" ><br>
+            3° valor : <input type = "text" name="txtn3" size = "5" ><br>
+            <input type = "button" Value ="resul" name="btnVai" onclick="triangulo();">
+        </form>
+        <p id="resultado1"></p>
+        <p id="resultado2"></p>
+    </body>
+</html>
